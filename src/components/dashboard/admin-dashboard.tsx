@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Users, BookOpen, Languages, Activity } from "lucide-react";
+import { Users, BookOpen, Languages, Activity, GraduationCap } from "lucide-react";
 
 const systemStats = {
   activeUsers: 152,
@@ -85,6 +85,12 @@ export default function AdminDashboard() {
                 <Button variant="outline">
                     <Users className="mr-2 h-4 w-4" />
                     Manage Users
+                </Button>
+            </Link>
+             <Link href="/manage-classes?role=admin" passHref>
+                <Button variant="outline">
+                    <GraduationCap className="mr-2 h-4 w-4" />
+                    Manage Teacher Classes
                 </Button>
             </Link>
         </CardContent>

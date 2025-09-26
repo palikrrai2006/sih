@@ -5,6 +5,8 @@ export type User = {
   name: string;
   role: Role;
   avatarUrl: string;
+  classId?: number; // For students
+  classIds?: number[]; // For teachers
 };
 
 export type Lesson = {

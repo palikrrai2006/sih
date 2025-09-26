@@ -22,6 +22,7 @@ import {
   Languages,
   Cog,
   FlaskConical,
+  GraduationCap,
 } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { users } from "@/lib/data"
@@ -45,6 +46,7 @@ const adminNav = [
   { href: "/dashboard", icon: LayoutDashboard, label: "Dashboard" },
   { href: "/translator", icon: Languages, label: "Translator" },
   { href: "/lessons", icon: Cog, label: "Content" },
+  { href: "/manage-classes", icon: GraduationCap, label: "Classes" },
 ]
 
 export default function AppSidebar() {

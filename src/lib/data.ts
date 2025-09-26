@@ -3,10 +3,10 @@ import type { Role, User, Lesson, Quiz, Badge, StudentProgress } from './types';
 import { placeholderImages } from './placeholder-images.json';
 
 export const users: User[] = [
-  { id: '1', name: 'Priya S.', role: 'student', avatarUrl: placeholderImages.find(p => p.id === 'avatar-1')?.imageUrl || '' },
-  { id: '2', name: 'Rohan K.', role: 'student', avatarUrl: placeholderImages.find(p => p.id === 'avatar-2')?.imageUrl || '' },
-  { id: '3', name: 'Anika V.', role: 'student', avatarUrl: placeholderImages.find(p => p.id === 'avatar-3')?.imageUrl || '' },
-  { id: '4', name: 'Mr. Sharma', role: 'teacher', avatarUrl: 'https://picsum.photos/seed/avatar4/100/100' },
+  { id: '1', name: 'Priya S.', role: 'student', avatarUrl: placeholderImages.find(p => p.id === 'avatar-1')?.imageUrl || '', classId: 8 },
+  { id: '2', name: 'Rohan K.', role: 'student', avatarUrl: placeholderImages.find(p => p.id === 'avatar-2')?.imageUrl || '', classId: 7 },
+  { id: '3', name: 'Anika V.', role: 'student', avatarUrl: placeholderImages.find(p => p.id === 'avatar-3')?.imageUrl || '', classId: 9 },
+  { id: '4', name: 'Mr. Sharma', role: 'teacher', avatarUrl: 'https://picsum.photos/seed/avatar4/100/100', classIds: [7, 8, 9] },
   { id: '5', name: 'Admin', role: 'admin', avatarUrl: 'https://picsum.photos/seed/avatar5/100/100' },
 ];
 
@@ -88,3 +88,5 @@ export const leaderboardData = studentProgressData
   }))
   .sort((a, b) => b.points - a.points)
   .map((s, index) => ({ ...s, rank: index + 1 }));
+
+export const classes = [6, 7, 8, 9, 10, 11, 12];
