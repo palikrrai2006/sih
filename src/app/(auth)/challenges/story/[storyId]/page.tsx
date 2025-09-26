@@ -32,7 +32,8 @@ const storyMetadata: Record<string, { title: string, imageUrl: string, imageHint
     }
 }
 
-export default function StoryPage({ params }: { params: { storyId: string } }) {
+export default function StoryPage({ params: paramsProp }: { params: { storyId: string } }) {
+    const params = use(Promise.resolve(paramsProp));
     const [storyState, setStoryState] = useState<StoryOutput | null>(null);
     const [history, setHistory] = useState<StoryOutput[]>([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -122,4 +123,3 @@ export default function StoryPage({ params }: { params: { storyId: string } }) {
         </div>
     );
 }
-
