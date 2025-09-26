@@ -1,3 +1,4 @@
+
 "use client"
 
 import Link from "next/link";
@@ -33,6 +34,7 @@ const studentNav = [
   { href: "/lessons", icon: BookOpen, label: "Lessons" },
   { href: "/quizzes", icon: HelpCircle, label: "Quizzes" },
   { href: "/rewards", icon: Trophy, label: "Rewards" },
+  { href: "/translator", icon: Languages, label: "Translator" },
 ]
 
 const teacherNav = [
@@ -40,6 +42,7 @@ const teacherNav = [
   { href: "/lessons", icon: BookOpen, label: "Lessons" },
   { href: "/quizzes", icon: HelpCircle, label: "Quizzes" },
   { href: "/analytics", icon: Users, label: "Manage Students" },
+  { href: "/translator", icon: Languages, label: "Translator" },
 ]
 
 const adminNav = [
