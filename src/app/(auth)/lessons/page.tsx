@@ -41,12 +41,12 @@ export default function LessonsPage({
               </p>
             </CardContent>
             <CardFooter>
-              <Link href={`/lessons/${lesson.id}?role=${role}`} className="w-full">
-                <Button className="w-full">
+              <Button asChild className="w-full">
+                <Link href={`/lessons/${lesson.id}?role=${role}`}>
                   Start Lesson
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </CardFooter>
           </Card>
         ))}
