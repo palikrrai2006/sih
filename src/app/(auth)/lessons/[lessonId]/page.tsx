@@ -13,6 +13,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { use } from "react";
+import { useParams } from "next/navigation";
 
 const lessonContent = {
     "phy-1": [
@@ -32,12 +34,12 @@ const lessonContent = {
 };
 
 export default function LessonDetailPage({
-  params,
   searchParams,
 }: {
   params: { lessonId: "phy-1" };
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
+  const params = useParams<{ lessonId: "phy-1" }>();
   const lesson = lessons.find((l) => l.id === params.lessonId);
   const role = searchParams.role;
 
