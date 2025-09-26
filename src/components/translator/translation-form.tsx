@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -28,7 +29,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, Languages, Loader2, AlertTriangle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
-const languages = ["Hindi", "Tamil", "Bengali", "Marathi", "Telugu", "Gujarati", "Kannada"];
+const languages = ["Hindi", "Tamil", "Bengali", "Marathi", "Telugu", "Gujarati", "Kannada", "Punjabi"];
 
 const formSchema = z.object({
   text: z.string().min(10, { message: "Please enter at least 10 characters." }),
