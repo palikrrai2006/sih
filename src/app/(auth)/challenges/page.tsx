@@ -18,16 +18,16 @@ const challenges = [
     title: 'Logic Puzzles',
     description: 'Sharpen your mind with a collection of brain-teasing logic puzzles and riddles.',
     icon: Brain,
-    href: '#',
-    status: 'Coming Soon'
+    href: '/challenges/logic-puzzles',
+    status: 'Ready to Play'
   },
   {
     id: 'coding-challenges',
     title: 'Coding Challenges',
     description: 'Put your programming skills to the test with fun, block-based coding problems.',
     icon: Puzzle,
-    href: '#',
-    status: 'Coming Soon'
+    href: '/challenges/coding-challenges',
+    status: 'Ready to Play'
   },
 ];
 
