@@ -1,3 +1,76 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-image-1",
+      "description": "Students collaborating in a classroom setting.",
+      "imageUrl": "https://images.unsplash.com/photo-1589395937658-0557e7d89fad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzdHVkZW50cyUyMGxlYXJuaW5nfGVufDB8fHx8MTc1ODg1MTEyOXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "students learning"
+    },
+    {
+      "id": "avatar-1",
+      "description": "Avatar for a student named Priya S.",
+      "imageUrl": "https://images.unsplash.com/photo-1650153265880-889a8b60a10b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzdHVkZW50JTIwcG9ydHJhaXR8ZW58MHx8fHwxNzU4ODQwNzk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "student portrait"
+    },
+    {
+      "id": "avatar-2",
+      "description": "Avatar for a student named Rohan K.",
+      "imageUrl": "https://images.unsplash.com/photo-1517256673644-36ad11246d21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzdHVkZW50JTIwcG9ydHJhaXR8ZW58MHx8fHwxNzU4ODQwNzk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "student portrait"
+    },
+    {
+      "id": "avatar-3",
+      "description": "Avatar for a student named Anika V.",
+      "imageUrl": "https://images.unsplash.com/photo-1650153265880-889a8b60a10b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzdHVkZW50JTIwcG9ydHJhaXR8ZW58MHx8fHwxNzU4ODQwNzk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "student portrait"
+    },
+    {
+      "id": "badge-physics-1",
+      "description": "Badge for completing Physics 101",
+      "imageUrl": "https://images.unsplash.com/photo-1746455487269-376ad8544019?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwaHlzaWNzJTIwYXdhcmR8ZW58MHx8fHwxNzU4ODYzNDk5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "physics award"
+    },
+    {
+      "id": "badge-chemistry-1",
+      "description": "Badge for completing Chemistry Basics",
+      "imageUrl": "https://images.unsplash.com/photo-1591007162337-812278acc4a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaGVtaXN0cnklMjBhd2FyZHxlbnwwfHx8fDE3NTg4NjM0OTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chemistry award"
+    },
+    {
+      "id": "badge-biology-1",
+      "description": "Badge for completing Intro to Biology",
+      "imageUrl": "https://images.unsplash.com/photo-1659080907377-ee6a57fb6b9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxiaW9sb2d5JTIwYXdhcmR8ZW58MHx8fHwxNzU4ODYzNDk5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "biology award"
+    },
+    {
+      "id": "badge-math-1",
+      "description": "Badge for completing Algebra Fundamentals",
+      "imageUrl": "https://images.unsplash.com/photo-1632679090212-612ac1f4d76f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWF0aCUyMGF3YXJkfGVufDB8fHx8MTc1ODg2MzQ5OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "math award"
+    },
+    {
+      "id": "lesson-physics",
+      "description": "Thumbnail for a physics lesson.",
+      "imageUrl": "https://images.unsplash.com/photo-1758685734483-e11fe75480dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwaHlzaWNzJTIwY29uY2VwdHxlbnwwfHx8fDE3NTg4NjM0OTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "physics concept"
+    },
+    {
+      "id": "lesson-chemistry",
+      "description": "Thumbnail for a chemistry lesson.",
+      "imageUrl": "https://images.unsplash.com/photo-1758685734153-132c8620c1bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2hlbWlzdHJ5JTIwZXhwZXJpbWVudHxlbnwwfHx8fDE3NTg4MTEwMjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chemistry experiment"
+    },
+    {
+      "id": "lesson-biology",
+      "description": "Thumbnail for a biology lesson.",
+      "imageUrl": "https://images.unsplash.com/photo-1755107504698-380320b632bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxiaW9sb2d5JTIwZG5hfGVufDB8fHx8MTc1ODc0NzU1MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "biology dna"
+    },
+    {
+      "id": "lesson-tech",
+      "description": "Thumbnail for a technology lesson.",
+      "imageUrl": "https://images.unsplash.com/photo-1610642436394-81749134ffe8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0ZWNobm9sb2d5JTIwY2lyY3VpdHxlbnwwfHx8fDE3NTg4NjM0OTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "technology circuit"
+    }
+  ]
 }
