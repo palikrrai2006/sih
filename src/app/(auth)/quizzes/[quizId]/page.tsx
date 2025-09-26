@@ -1,19 +1,19 @@
 
 "use client"
 
-import { notFound, useRouter } from "next/navigation";
+import { notFound, useRouter, useParams } from "next/navigation";
 import { quizzes, lessons } from "@/lib/data";
 import { Card, CardHeader, CardTitle, CardContent, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Trophy, ArrowLeft } from "lucide-react";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import Link from "next/link";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
-export default function QuizPage({ params }: { params: { quizId: string } }) {
+export default function QuizPage() {
   const router = useRouter();
+  const params = useParams<{ quizId: string }>();
   const { toast } = useToast();
   const quiz = quizzes.find((q) => q.id === params.quizId);
   const lesson = quiz ? lessons.find(l => l.id === quiz.lessonId) : undefined;
