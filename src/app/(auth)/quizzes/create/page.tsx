@@ -15,6 +15,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Trash2, PlusCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { lessons } from '@/lib/data';
+import { useQuizStore } from '@/lib/quiz-store';
+import { quizzes } from '@/lib/data';
 
 const questionSchema = z.object({
   text: z.string().min(1, "Question text is required"),
@@ -34,6 +36,7 @@ type QuizFormValues = z.infer<typeof quizSchema>;
 export default function CreateQuizPage() {
   const router = useRouter();
   const { toast } = useToast();
+  const { addQuiz } = useQuizStore();
 
   const form = useForm<QuizFormValues>({
     resolver: zodResolver(quizSchema),
@@ -53,7 +56,21 @@ export default function CreateQuizPage() {
   });
 
   const onSubmit = (data: QuizFormValues) => {
-    console.log('New Quiz Data:', data);
+    const lesson = lessons.find(l => l.id === data.lessonId);
+    if (!lesson) return;
+
+    const newQuiz = {
+      ...data,
+      id: `q-${Date.now()}`,
+      subject: lesson.subject,
+      questions: data.questions.map((q, index) => ({
+        ...q,
+        id: `q${index + 1}`,
+      }))
+    };
+
+    addQuiz(newQuiz);
+    
     toast({
       title: "Quiz Created!",
       description: `The quiz "${data.title}" has been successfully created.`,

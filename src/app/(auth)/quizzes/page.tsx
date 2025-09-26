@@ -1,3 +1,6 @@
+
+"use client";
+
 import Link from "next/link";
 import {
   Card,
@@ -8,15 +11,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { quizzes, lessons } from "@/lib/data";
+import { lessons } from "@/lib/data";
+import { useQuizStore } from "@/lib/quiz-store";
 import { ArrowRight, Trophy, PlusCircle } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 
-export default function QuizzesPage({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
-  const role = searchParams.role;
+export default function QuizzesPage() {
+  const searchParams = useSearchParams();
+  const role = searchParams.get('role');
+  const { quizzes } = useQuizStore();
 
   return (
     <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
