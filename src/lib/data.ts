@@ -1,3 +1,4 @@
+
 import { Atom, BrainCircuit, Dna, FlaskConical } from 'lucide-react';
 import type { Role, User, Lesson, Quiz, Badge, StudentProgress } from './types';
 import { placeholderImages } from './placeholder-images.json';
@@ -61,6 +62,17 @@ export const quizzes: Quiz[] = [
         { id: 'q1', text: 'What component is used to resist the flow of current?', options: ['Capacitor', 'Inductor', 'Resistor', 'Transistor'], correctAnswer: 'Resistor' },
     ]
   },
+  {
+    id: 'q-chem-2',
+    title: 'Advanced Reactions',
+    lessonId: 'chem-1',
+    subject: 'Chemistry',
+    points: 130,
+    questions: [
+      { id: 'q1', text: 'Which of the following is a sign of a chemical reaction?', options: ['Change in color', 'Production of gas', 'Change in temperature', 'All of the above'], correctAnswer: 'All of the above' },
+      { id: 'q2', text: 'Balancing chemical equations is based on which law?', options: ['Law of Conservation of Mass', 'Law of Constant Proportions', 'Avogadro\'s Law', 'Boyle\'s Law'], correctAnswer: 'Law of Conservation of Mass' },
+    ]
+  }
 ];
 
 export const badges: Badge[] = [
