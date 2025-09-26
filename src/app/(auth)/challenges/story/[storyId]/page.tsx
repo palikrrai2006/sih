@@ -2,6 +2,7 @@
 "use client";
 
 import { useState, useEffect, use } from 'react';
+import { useParams } from 'next/navigation';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Loader2, Sparkles } from 'lucide-react';
@@ -32,8 +33,8 @@ const storyMetadata: Record<string, { title: string, imageUrl: string, imageHint
     }
 }
 
-export default function StoryPage({ params: paramsProp }: { params: { storyId: string } }) {
-    const params = use(Promise.resolve(paramsProp));
+export default function StoryPage() {
+    const params = useParams<{ storyId: string }>();
     const [storyState, setStoryState] = useState<StoryOutput | null>(null);
     const [history, setHistory] = useState<StoryOutput[]>([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -41,6 +42,7 @@ export default function StoryPage({ params: paramsProp }: { params: { storyId: s
     const metadata = storyMetadata[params.storyId] || { title: "Adventure", imageUrl: "https://picsum.photos/seed/default-bg/1200/800", imageHint: "fantasy landscape"};
 
     useEffect(() => {
+        if (!params.storyId) return;
         async function startStory() {
             setIsLoading(true);
             const input: StoryInput = {
