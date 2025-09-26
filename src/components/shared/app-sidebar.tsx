@@ -24,6 +24,7 @@ import {
   Cog,
   FlaskConical,
   GraduationCap,
+  Puzzle,
 } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { users } from "@/lib/data"
@@ -34,6 +35,7 @@ const studentNav = [
   { href: "/lessons", icon: BookOpen, label: "Lessons" },
   { href: "/quizzes", icon: HelpCircle, label: "Quizzes" },
   { href: "/rewards", icon: Trophy, label: "Rewards" },
+  { href: "/challenges", icon: Puzzle, label: "Challenges" },
   { href: "/translator", icon: Languages, label: "Translator" },
 ]
 
