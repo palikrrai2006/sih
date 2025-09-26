@@ -7,23 +7,50 @@ import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { Role } from '@/lib/types';
 import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
   Users,
   GraduationCap,
   Shield,
 } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 export function LoginForm() {
   const router = useRouter();
   const [role, setRole] = React.useState<Role>('student');
+  const [grade, setGrade] = React.useState<string>('');
+  const [error, setError] = React.useState<string>('');
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    router.push(`/dashboard?role=${role}`);
+    if (role === 'student' && !grade) {
+        setError('Please select a class to continue.');
+        return;
+    }
+    setError('');
+    const params = new URLSearchParams({ role });
+    if (role === 'student' && grade) {
+        params.set('grade', grade);
+    }
+    router.push(`/dashboard?${params.toString()}`);
   };
+
+  const handleRoleChange = (value: string) => {
+    setRole(value as Role);
+    if (value !== 'student') {
+        setGrade('');
+        setError('');
+    }
+  }
 
   return (
     <form onSubmit={handleSubmit} className="grid gap-4">
-      <RadioGroup value={role} onValueChange={(value: string) => setRole(value as Role)} className="grid gap-4">
+      <RadioGroup value={role} onValueChange={handleRoleChange} className="grid gap-4">
         <Label
           htmlFor="student"
           className="flex flex-row items-center justify-between rounded-lg border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:border-primary"
@@ -55,6 +82,24 @@ export function LoginForm() {
           <RadioGroupItem value="admin" id="admin" />
         </Label>
       </RadioGroup>
+
+        <div className={cn("grid gap-2 transition-all duration-300", role === 'student' ? "h-auto opacity-100" : "h-0 opacity-0 overflow-hidden")}>
+             <Label htmlFor="grade">Class</Label>
+            <Select onValueChange={setGrade} value={grade}>
+                <SelectTrigger id="grade">
+                    <SelectValue placeholder="Select your class" />
+                </SelectTrigger>
+                <SelectContent>
+                    {Array.from({ length: 7 }, (_, i) => 6 + i).map((g) => (
+                        <SelectItem key={g} value={g.toString()}>
+                            Class {g}
+                        </SelectItem>
+                    ))}
+                </SelectContent>
+            </Select>
+            {error && <p className="text-sm font-medium text-destructive">{error}</p>}
+        </div>
+
       <Button type="submit" className="w-full">
         Login
       </Button>
