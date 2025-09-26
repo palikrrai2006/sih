@@ -10,6 +10,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { User as UserIcon } from 'lucide-react';
 import Image from 'next/image';
 import { placeholderImages } from '@/lib/placeholder-images.json';
+import { Role } from '@/lib/types';
 
 export default function LoginDetailsPage() {
   const router = useRouter();
@@ -18,11 +19,34 @@ export default function LoginDetailsPage() {
   const [error, setError] = React.useState<string>('');
   
   const heroImage = placeholderImages.find(p => p.id === "hero-image-1");
+  const role = searchParams.get('role') as Role || 'student';
+
+  const getLabel = () => {
+    switch (role) {
+      case 'teacher':
+        return 'Teacher ID';
+      case 'admin':
+        return 'Admin ID';
+      default:
+        return 'Student ID';
+    }
+  };
+
+  const getPlaceholder = () => {
+    switch (role) {
+      case 'teacher':
+        return 'Enter your Teacher ID';
+      case 'admin':
+        return 'Enter your Admin ID';
+      default:
+        return 'Enter your Student ID';
+    }
+  }
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!userId) {
-      setError('Please enter your User ID.');
+      setError(`Please enter your ${getLabel()}.`);
       return;
     }
     setError('');
@@ -44,16 +68,16 @@ export default function LoginDetailsPage() {
           <Card>
             <CardHeader>
               <CardTitle className="text-2xl">Enter Details</CardTitle>
-              <CardDescription>Please enter your User ID to log in.</CardDescription>
+              <CardDescription>Please enter your {getLabel()} to log in.</CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="grid gap-4">
                 <div className="grid gap-2">
-                  <Label htmlFor="userId" className='flex items-center gap-2'><UserIcon className='h-4 w-4' /> User ID</Label>
+                  <Label htmlFor="userId" className='flex items-center gap-2'><UserIcon className='h-4 w-4' /> {getLabel()}</Label>
                   <Input
                     id="userId"
                     type="text"
-                    placeholder="Enter your ID"
+                    placeholder={getPlaceholder()}
                     value={userId}
                     onChange={(e) => setUserId(e.target.value)}
                     required
