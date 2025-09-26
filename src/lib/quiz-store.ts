@@ -11,6 +11,6 @@ interface QuizState {
 }
 
 export const useQuizStore = create<QuizState>((set) => ({
-  quizzes: initialQuizzes,
+  quizzes: [],
   addQuiz: (quiz) => set((state) => ({ quizzes: [...state.quizzes, quiz] })),
 }));
