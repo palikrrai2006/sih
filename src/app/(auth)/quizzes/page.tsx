@@ -27,7 +27,7 @@ export default function QuizzesPage() {
     <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
       <div className="flex items-center justify-between space-y-2">
         <h2 className="text-3xl font-bold tracking-tight font-headline">Quizzes</h2>
-        {role === 'teacher' && (
+        {role === 'teacher' && quizzes.length > 0 && (
           <Button asChild>
             <Link href={`/quizzes/create?role=teacher`}>
               <PlusCircle className="mr-2 h-4 w-4" />
@@ -68,14 +68,21 @@ export default function QuizzesPage() {
       ) : (
         <div className="flex flex-col items-center justify-center h-64 text-center text-muted-foreground p-8 border-2 border-dashed rounded-lg">
             <h3 className="text-xl font-semibold mb-2">No Quizzes Yet</h3>
-            <p>
-                {role === 'teacher' 
-                    ? "You haven't created any quizzes. Click 'Create New Quiz' to get started."
-                    : "There are no quizzes available at the moment. Please check back later."}
-            </p>
+            {role === 'teacher' ? (
+                 <>
+                    <p className="mb-4">Click the button below to create your first quiz.</p>
+                    <Button asChild>
+                        <Link href={`/quizzes/create?role=teacher`}>
+                        <PlusCircle className="mr-2 h-4 w-4" />
+                        Create New Quiz
+                        </Link>
+                    </Button>
+                 </>
+            ) : (
+                <p>There are no quizzes available at the moment. Please check back later.</p>
+            )}
         </div>
       )}
     </div>
   );
 }
-
