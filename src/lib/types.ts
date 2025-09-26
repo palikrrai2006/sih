@@ -15,12 +15,20 @@ export type Lesson = {
   icon: React.ElementType;
 };
 
+export type QuizQuestion = {
+  id: string;
+  text: string;
+  options: string[];
+  correctAnswer: string;
+};
+
 export type Quiz = {
   id: string;
   title: string;
   lessonId: string;
   subject: string;
   points: number;
+  questions: QuizQuestion[];
 };
 
 export type Badge = {

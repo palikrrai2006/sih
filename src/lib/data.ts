@@ -18,10 +18,49 @@ export const lessons: Lesson[] = [
 ];
 
 export const quizzes: Quiz[] = [
-  { id: 'q-phy-1', title: 'Motion Mastery', lessonId: 'phy-1', subject: 'Physics', points: 100 },
-  { id: 'q-chem-1', title: 'Reaction Race', lessonId: 'chem-1', subject: 'Chemistry', points: 120 },
-  { id: 'q-bio-1', title: 'Cell Structure Challenge', lessonId: 'bio-1', subject: 'Biology', points: 150 },
-  { id: 'q-tech-1', title: 'Circuit Challenge', lessonId: 'tech-1', subject: 'Technology', points: 80 },
+  { 
+    id: 'q-phy-1', 
+    title: 'Motion Mastery', 
+    lessonId: 'phy-1', 
+    subject: 'Physics', 
+    points: 100,
+    questions: [
+      { id: 'q1', text: 'What is the unit of force?', options: ['Joule', 'Watt', 'Newton', 'Pascal'], correctAnswer: 'Newton' },
+      { id: 'q2', text: 'Which of Newton\'s laws is also known as the law of inertia?', options: ['First Law', 'Second Law', 'Third Law', 'Fourth Law'], correctAnswer: 'First Law' },
+      { id: 'q3', text: 'A car accelerates from rest. What force is responsible for this acceleration?', options: ['Gravity', 'Friction', 'Air Resistance', 'Engine Force'], correctAnswer: 'Engine Force' },
+    ]
+  },
+  { 
+    id: 'q-chem-1', 
+    title: 'Reaction Race', 
+    lessonId: 'chem-1', 
+    subject: 'Chemistry', 
+    points: 120,
+    questions: [
+      { id: 'q1', text: 'What is the chemical symbol for water?', options: ['H2O', 'CO2', 'O2', 'NaCl'], correctAnswer: 'H2O' },
+      { id: 'q2', text: 'What type of reaction is 2H2 + O2 -> 2H2O?', options: ['Decomposition', 'Synthesis', 'Single Replacement', 'Double Replacement'], correctAnswer: 'Synthesis' },
+    ] 
+  },
+  { 
+    id: 'q-bio-1', 
+    title: 'Cell Structure Challenge', 
+    lessonId: 'bio-1', 
+    subject: 'Biology', 
+    points: 150,
+    questions: [
+        { id: 'q1', text: 'What is the powerhouse of the cell?', options: ['Nucleus', 'Mitochondria', 'Ribosome', 'Cell Wall'], correctAnswer: 'Mitochondria' },
+    ]
+  },
+  { 
+    id: 'q-tech-1', 
+    title: 'Circuit Challenge', 
+    lessonId: 'tech-1', 
+    subject: 'Technology', 
+    points: 80,
+    questions: [
+        { id: 'q1', text: 'What component is used to resist the flow of current?', options: ['Capacitor', 'Inductor', 'Resistor', 'Transistor'], correctAnswer: 'Resistor' },
+    ]
+  },
 ];
 
 export const badges: Badge[] = [
@@ -49,4 +88,3 @@ export const leaderboardData = studentProgressData
   }))
   .sort((a, b) => b.points - a.points)
   .map((s, index) => ({ ...s, rank: index + 1 }));
-
