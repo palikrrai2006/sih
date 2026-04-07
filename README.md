@@ -54,6 +54,10 @@ marks: 1, _id: 0 })
 { $rename: { "marks": "score" } }
 )
 18 db.students.find({}, { city: 0 })
+
+
+
+
 2)
 use employeeDB
 db.createCollection("employees")
@@ -114,6 +118,12 @@ city: null }, { $set: { city:
 $rename: { "salary": "income" } })
 18 db.employees.find({}, {
 department: 0 })
+
+
+
+
+
+
 3)
 use collegeDB
 db.createCollection("college")
@@ -180,6 +190,12 @@ location: null }, { $set: { location:
 $rename: { "studentsCount":
 "totalStudents" } })
 18. db.college.find({}, { type: 0 })
+
+
+
+
+
+
 4)
 use orderDB
 db.createCollection("orders")
@@ -242,6 +258,9 @@ customerName: 1, product: 1, _id: 0 })
 17. db.orders.updateMany({}, {
 $rename: { "price": "cost" } })
 18. db.orders.find({}, { status: 0 })
+
+
+
 5)
 use movieDB
 db.createCollection("movies")
